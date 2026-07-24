@@ -1,0 +1,1 @@
+var json_CastelloMesocco_59 = {"type":"FeatureCollection","name":"CastelloMesocco_59","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","Nome":"Mesocco"},"geometry":{"type":"Point","coordinates":[9.232797050822461,46.380288956078211]}}]}

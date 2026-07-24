@@ -1,0 +1,1523 @@
+
+        #map {
+            background-color: #ffffff
+        }
+        html, body, #map {
+			overflow: hidden;
+        }
+        .col9{
+			height: 100%!important;
+		}
+		.col3{
+			height: 100%;
+			overflow: auto;
+		}
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background-color:#f8f8f8 !important;
+            color: #444444 !important;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h2 {
+            margin: 0 0 5px;
+        }
+        .leaflet-container {
+            background: #fff;
+            padding-right: 10px;
+        }
+        .leaflet-popup-scrolled {
+            border-bottom: unset!important;
+            border-top: unset!important;
+        }
+        .leaflet-popup-content{
+            max-height: 70vh;
+            max-width: 70vw;
+        }
+        .leaflet-popup-content.media{
+            width: auto!important;
+            height: auto!important;
+            overflow: auto;
+        }
+        .leaflet-popup-content th {
+            text-align: left;
+            vertical-align: top;
+            min-width: 75px;
+        }
+        .leaflet-popup-content td {
+            min-width: 75px;
+        }
+        .leaflet-popup-content td img {
+            max-height: 60vh;
+            max-width: 60vw;
+        }
+
+        .leaflet-tooltip {
+            background: none;
+            box-shadow: none;
+            border: none;
+        }
+        .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+            border: 0px;
+        }
+        .fa, .leaflet-container, a {
+            color: #444444 !important;
+        }
+        .leaflet-control-zoom-in, .leaflet-control-zoom-out,
+        .leaflet-control-locate a,
+        .leaflet-touch .leaflet-control-geocoder-icon,
+        .leaflet-control-search .search-button,
+         .leaflet-control-measure {
+            background-color: #f8f8f8 !important;
+            border-radius: 0px !important;
+            color: #444444 !important;
+        }
+        .abstract {
+            font: bold 18px 'Lucida Console', Monaco, monospace;
+            text-indent: 1px;
+            background-color: #f8f8f8 !important;
+            width: 30px !important;
+            color: #444444 !important;
+            height: 30px !important;
+            text-align: center !important;
+            line-height: 30px !important;
+        }
+        .abstractUncollapsed {
+            padding: 6px 8px;
+            font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+            background-color:#f8f8f8 !important;
+            color: #444444 !important;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            max-width: 40%;
+        }
+        .leaflet-control {
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4)!important;
+            border-radius: 4px;
+        }
+        .leaflet-touch .leaflet-control-layers,
+        .leaflet-touch .leaflet-bar,
+        .leaflet-control-search,
+        .leaflet-control-measure {
+            border: 3px solid rgba(255,255,255,.4) !important;
+        }
+        .leaflet-control-attribution a {
+            color: #0078A8 !important;
+        }
+        .leaflet-control-scale-line {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            color: black !important;
+        }
+        .leaflet-control-search .search-button {
+            width: 30px !important;
+            height: 30px !important;
+            font-size: 13px !important;
+            text-align: center !important;
+            cursor: pointer;
+        }
+        .search-button.fa.fa-binoculars{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .leaflet-control-measure .leaflet-control {
+            width: 30px !important;
+            height: 30px !important;
+        }
+        .leaflet-container .leaflet-control-search{
+            background: none !important;
+        }
+        .leaflet-control-search .search-input {
+            margin: 0px 0px 0px 0px !important;
+            height: 30px !important;
+        }
+        .leaflet-control-measure {
+            background: none!important;
+            border-radius: 4px !important;
+        }
+        .leaflet-control-measure .leaflet-control-measure-interaction {
+            background-color: #f8f8f8 !important;
+        }
+        .leaflet-touch .leaflet-control-measure
+        .leaflet-control-measure-toggle,
+        .leaflet-touch .leaflet-control-measure
+        .leaflet-control-measure-toggle:hover {
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 0px !important;
+            background-color: #f8f8f8 !important;
+            color: #444444 !important;
+            font-size: 13px;
+            line-height: 30px;
+            text-align: center;
+            text-indent: 0%;
+        }
+        .leaflet-control-layers {
+			padding: 2px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+            background-color: #f8f8f8 !important;
+            color: #444444 !important;
+
+		}
+        .leaflet-control-layers-expanded {
+			padding-left: 6px;
+		}	
+        .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+            display: block;
+            background-image: none;
+			text-decoration: none;
+            margin-bottom: 3px;
+        }
+        .leaflet-control-layers-expanded .leaflet-control-layers-toggle::after {
+            content: '»';
+            font-size: x-large;
+            color: #444444 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .leaflet-overlay-pane {
+            z-index: 550;
+        }
+        .leaflet-popup-pane {
+            z-index: 700;
+        }
+        #gcd-button-control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .leaflet-marker-icon{
+            white-space: nowrap;
+        }
+        
+        .css_ImperoOttomano14511512_2 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_ConteadiGoriziafinoal1500_5 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodAragona1400_1516_6 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Navarrafino1516_7 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodiGranadafino1492_8 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodiCastiglia1400_1492_9 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodelPortogallo_10 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_ConteadiBorgogna_11 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_DucatodiBretagna_12 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodiFrancia1480_1530_13 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Chiesaunito_14 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Ferraraunito_15 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Massaunito_16 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_DucatodiSavoia1478_17 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_MarchesatodiSaluzzo_18 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_ConteadiAsti_19 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_MarchesatodiMonferrato_20 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_RegnodiNapolispagnolo1516_1713_21 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Appianounito_22 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Luccaunito_23 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Sienaunito_24 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Firenzeunito_25 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Genovaunito_26 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_DucatodiMilano14541499periodovisconteosforzesco_27 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_DucatodiMantova1454_28 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Venezia14541503_29 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Confederazione_1480_32 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Principato_vescovile_Basilea_fino_1700_33 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_WerdenbergSargans1456_1509_35 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Principatovescovile1456_1526_36 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Caddeada1408_38 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Comunispeciali_39 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_vonMontfort1436_1466_40 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_vonToggenburg1436_1466_41 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Dieci_Giurisdizioniunito_da_1436_43 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_WerdenbergSargans_13671456_44 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_vonRhzns1383_1458_45 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Cadifino1497_46 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_VonLumbrein1429_1489_47 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_VonHewen1428_1568_48 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_deSacco_unito_14801483_49 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Trivulzio_1480_50 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Grigia_unito_1424_1480_51 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Chiavennaunito_53 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Valtellinaunito_54 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Bormiounito_55 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Tre_Pieveunito_56 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_CastelloMesocco_59 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
+        .css_Citt_60 {
+            pointer-events: none!important;
+            text-shadow: -2px -2px 0 #fafafa,
+                -2px -1px 0 #fafafa,
+                -2px 0px 0 #fafafa,
+                -2px 1px 0 #fafafa,
+                -2px 2px 0 #fafafa,
+                -1px -2px 0 #fafafa,
+                -1px -1px 0 #fafafa,
+                -1px 0px 0 #fafafa,
+                -1px 1px 0 #fafafa,
+                -1px 2px 0 #fafafa,
+                0px -2px 0 #fafafa,
+                0px -1px 0 #fafafa,
+                0px 1px 0 #fafafa,
+                0px 2px 0 #fafafa,
+                1px -2px 0 #fafafa,
+                1px -1px 0 #fafafa,
+                1px 0px 0 #fafafa,
+                1px 1px 0 #fafafa,
+                1px 2px 0 #fafafa,
+                2px -2px 0 #fafafa,
+                2px -1px 0 #fafafa,
+                2px 0px 0 #fafafa,
+                2px 1px 0 #fafafa,
+                2px 2px 0 #fafafa;
+        }
